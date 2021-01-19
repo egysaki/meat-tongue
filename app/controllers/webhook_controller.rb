@@ -42,10 +42,25 @@ class WebhookController < ApplicationController
         when Line::Bot::Event::MessageType::Text
           url = root_url(only_path: false)
 
-          message = {
-            type: 'text',
-            text: 'Hello World'
-          }
+          text = event.message['text']
+          meat = Meat.find_by_name(text)
+
+          message = {}
+
+          if meat
+            contents = meat.return_contents
+
+            message = {
+              type: 'flex',
+              altText: "#{meat.name} について",
+              contents: contents
+            }
+          else
+            message = {
+              type: 'text',
+              text: 'ちょっと何言ってるか分からない。'
+            }
+          end
 
           response = client.reply_message(event['replyToken'], message)
           puts response
