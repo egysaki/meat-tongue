@@ -4,8 +4,8 @@ default: &default
   charset: utf8
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   host: localhost
-  username: <%= ENV['MEAT_TONGUE_DB_USER'] %>
-  password: <%= ENV['MEAT_TONGUE_DB_PASSWORD'] %>
+  username: root #<%= ENV['MEAT_TONGUE_DB_USER'] %>
+  password: rootroot #<%= ENV['MEAT_TONGUE_DB_PASSWORD'] %>
   socket: /var/lib/mysql/mysql.sock
 
 development:
