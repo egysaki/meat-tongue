@@ -18,4 +18,5 @@ test:
 
 production:
   <<: *default
-  url: <%= ENV['MEAT_TONGUE_DB_URL'] %>
+  adapter: postgresql
+  url: <%= ENV['DATBASE_URL'] %>
