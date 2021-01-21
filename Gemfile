@@ -51,6 +51,8 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Use mysql as the database for Active Record
   gem 'mysql2', '>= 0.3.18', '< 0.6.0'
+
+  gem 'brakeman'
 end
 
 group :development do
