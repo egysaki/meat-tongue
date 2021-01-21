@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
-  get 'top/index'
-  
+
+  resources :meats
+  resources :top, :only => [:index]
+
   post  '/callback' => 'webhook#callback'
 
   root 'top#index'

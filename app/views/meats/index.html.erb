@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="panel panel-default">
+    <div class="row">
+      <table class="table table-sm table-striped table-hover">
+        <thead align="center">
+          <tr class="bg-primary">
+            <th><%= Meat.human_attribute_name :name %></th>
+          </tr>
+        </thead>
+  
+        <tbody>
+          <% @meats.each do |meat| %>
+          <tr>
+            <td><%= meat.name %></td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
